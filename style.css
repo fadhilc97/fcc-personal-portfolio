@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
 /* font-family: 'PT Sans', sans-serif; */
 
@@ -7,10 +7,11 @@
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    color: white;
 }
 
 /* Navbar */
@@ -18,6 +19,8 @@ body {
     background-color: #242582;
     display: flex;
     justify-content: flex-end;
+    position: fixed;
+    width: 100%;
 }
 
 #navbar a {
@@ -32,7 +35,99 @@ body {
 }
 
 /* Section 1 : Welcome */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    /* color: white; */
+    height: 100vh;
+    line-height: 0;
+}
+#welcome-section h1 {
+    font-size: 4em;
+}
+#welcome-section p {
+    font-size: 2em;
+    font-style: italic;
+    color: #09f;
+}
 
 /* Section 2 : Projects */
+#projects {
+    background-color: #008099;
+    padding: 1rem 2rem;
+}
+
+#projects h1 {
+    font-size: 3em;
+    max-width: 250px;
+    border-bottom: 3px solid white;
+    /* color: white; */
+    text-align: center;
+    margin: 0 auto 30px auto;
+}
+
+.project-tiles {
+    display: flex;
+    justify-content: center;
+}
+
+.project-tile {
+    background-color: #444;
+    width: 30%;
+    min-width: 250px;
+    margin: 0 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+}
+
+.project-tile img {
+    height: calc(100% - 3.7rem);
+    width: 100%;
+}
 
 /* Section 3 : Contact */
+#contact {
+    background-color: #333;
+    padding: 1rem 2rem;
+    /* color: white; */
+}
+
+#contact h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#contact .social-links {
+    display: flex;
+    justify-content: center;
+}
+
+#contact .social-links a {
+    margin: 0 10px;
+}
+
+/* Media Query */
+@media (max-width: 576px){
+    #welcome-section {
+        line-height: 1;
+    }
+    #welcome-section h1 {
+        font-size: calc(4em - 55%);
+    }
+    #projects h1, #contact h1 {
+        font-size: 2em;
+    }
+    .project-tiles {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-tile {
+        width: 75%;
+        margin: 10px 0;
+    }
+}
